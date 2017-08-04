@@ -5,7 +5,10 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import org.cassandraunit.CassandraCQLUnit;
 import org.cassandraunit.dataset.cql.ClassPathCQLDataSet;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 
 import java.util.List;
 
@@ -19,7 +22,7 @@ public abstract class CassandraOrmTest {
     private User user2;
 
     @Rule
-    public CassandraCQLUnit cassandraCQLUnit = new CassandraCQLUnit(new ClassPathCQLDataSet(getDataSetName()), 30000);
+    public CassandraCQLUnit cassandraCQLUnit = new CassandraCQLUnit(new ClassPathCQLDataSet(getDataSetName()));
 
     @Before
     public void before() {
