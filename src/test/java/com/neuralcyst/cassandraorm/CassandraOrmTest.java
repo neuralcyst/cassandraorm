@@ -19,7 +19,7 @@ public abstract class CassandraOrmTest {
     private User user2;
 
     @Rule
-    public CassandraCQLUnit cassandraCQLUnit = new CassandraCQLUnit(new ClassPathCQLDataSet(getDataSetName()));
+    public CassandraCQLUnit cassandraCQLUnit = new CassandraCQLUnit(new ClassPathCQLDataSet(getDataSetName()), 30000);
 
     @Before
     public void before() {

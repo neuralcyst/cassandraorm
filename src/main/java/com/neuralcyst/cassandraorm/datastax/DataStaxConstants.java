@@ -1,10 +1,10 @@
-package com.neuralcyst.cassandraorm.datasax;
+package com.neuralcyst.cassandraorm.datastax;
 
-public final class DataSaxConstants {
+public final class DataStaxConstants {
 
-    public static final String KEYSPACE = "datasax";
+    public static final String KEYSPACE = "datastax";
 
-    private DataSaxConstants() {
+    private DataStaxConstants() {
         throw new UnsupportedOperationException();
     }
 }

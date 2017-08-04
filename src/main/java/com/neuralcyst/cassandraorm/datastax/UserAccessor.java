@@ -1,4 +1,4 @@
-package com.neuralcyst.cassandraorm.datasax;
+package com.neuralcyst.cassandraorm.datastax;
 
 import com.datastax.driver.mapping.Result;
 import com.datastax.driver.mapping.annotations.Accessor;
@@ -8,6 +8,6 @@ import java.util.List;
 
 @Accessor
 public interface UserAccessor {
-    @Query("select * from datasax.user where id in ?")
-    Result<UserDataSaxImpl> findByUserIds(List<Long> ids);
+    @Query("select * from datastax.user where id in ?")
+    Result<UserDataStaxImpl> findByUserIds(List<Long> ids);
 }

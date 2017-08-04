@@ -1,10 +1,10 @@
-package com.neuralcyst.cassandraorm.datasax;
+package com.neuralcyst.cassandraorm.datastax;
 
 import com.datastax.driver.mapping.annotations.*;
 import com.neuralcyst.cassandraorm.User;
 
-@Table(keyspace = DataSaxConstants.KEYSPACE, name = "user")
-public class UserDataSaxImpl implements User {
+@Table(keyspace = DataStaxConstants.KEYSPACE, name = "user")
+public class UserDataStaxImpl implements User {
 
     @PartitionKey
     private long id;

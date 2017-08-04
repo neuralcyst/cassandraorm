@@ -1,11 +1,11 @@
-package com.neuralcyst.cassandraorm.datasax;
+package com.neuralcyst.cassandraorm.datastax;
 
 import com.datastax.driver.mapping.annotations.ClusteringColumn;
 import com.datastax.driver.mapping.annotations.Column;
 import com.datastax.driver.mapping.annotations.PartitionKey;
 import com.datastax.driver.mapping.annotations.Table;
 
-@Table(keyspace = DataSaxConstants.KEYSPACE, name = "ages")
+@Table(keyspace = DataStaxConstants.KEYSPACE, name = "ages")
 public class Ages {
 
     @PartitionKey

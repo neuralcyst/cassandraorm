@@ -5,17 +5,17 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Singleton;
-import com.neuralcyst.cassandraorm.datasax.UserDataSaxImpl;
-import com.neuralcyst.cassandraorm.datasax.UserRepositoryDataSaxImpl;
+import com.neuralcyst.cassandraorm.datastax.UserDataStaxImpl;
+import com.neuralcyst.cassandraorm.datastax.UserRepositoryDataStaxImpl;
 
-public class DataSaxCassandraTest extends CassandraOrmTest {
+public class DataStaxCassandraTest extends CassandraOrmTest {
     @Override
     protected Injector createInjector(Session session) {
         return Guice.createInjector(new AbstractModule() {
             @Override
             protected void configure() {
-                bind(User.class).to(UserDataSaxImpl.class);
-                bind(UserRepository.class).to(UserRepositoryDataSaxImpl.class).in(Singleton.class);
+                bind(User.class).to(UserDataStaxImpl.class);
+                bind(UserRepository.class).to(UserRepositoryDataStaxImpl.class).in(Singleton.class);
                 bind(Session.class).toInstance(session);
             }
         });
@@ -23,6 +23,6 @@ public class DataSaxCassandraTest extends CassandraOrmTest {
 
     @Override
     protected String getDataSetName() {
-        return "datasax_keyspace.cql";
+        return "datastax_keyspace.cql";
     }
 }
